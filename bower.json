@@ -1,0 +1,24 @@
+{
+  "name": "PreSys",
+  "version": "1.0.0",
+  "authors": [
+    "Sathish.G"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "public/lib/components/"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.18",
+    "angularjs": "~1.4.0",
+    "angular-ui-router": "~0.2.15",
+    "angular-bootstrap": "~0.13.0",
+    "bootstrap": "~3.3.4",
+    "less": "~2.5.1"
+  }
+}

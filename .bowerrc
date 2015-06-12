@@ -1,0 +1,5 @@
+{
+"https-proxy":"",
+"strict-ssl":false,
+"directory":"public/lib/components/"
+}
