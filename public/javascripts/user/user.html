@@ -1,3 +1,49 @@
-<div class="panel panel-default">
-    <div class="panel-heading">USER TEMPLATE</div>
+<div class="panel panel-default" ng-controller="userMainCtrl">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-8">
+                <h4>USER</h4>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-success pull-right" ui-sref="addUser">Add User</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <table class="table table-bordered table-hover"  cellspacing="0" cellpadding="10" width="100%" >
+            <thead>
+            <tr class="well">
+                <td></td>
+                <td></td>
+                <td align="center" style="text-align: center;font-size:18px;">Id</td>
+                <td align="center" style="text-align: center;font-size:18px;">Name</td>
+                <td align="center" style="text-align: center;font-size:18px;">Dob</td>
+                <td align="center" style="text-align: center;font-size:18px;">Gender</td>
+                <td align="center" style="text-align: center;font-size:18px;">Address Line 1</td>
+                <td align="center" style="text-align: center;font-size:18px;">Address Line 2</td>
+                <td align="center" style="text-align: center;font-size:18px;">City</td>
+                <td align="center" style="text-align: center;font-size:18px;">Country</td>
+                <td align="center" style="text-align: center;font-size:18px;">Mobile No</td>
+                <td align="center" style="text-align: center;font-size:18px;">Email</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in userData | orderBy:'name' ">
+                <input type="hidden"><span ng-bind="user._id"></span></input>
+                <td align="center"><span class="glyphicon glyphicon-pencil" ng-click="editUser(user)"></span></td>
+                <td align="center"><span class="glyphicon glyphicon-trash" ng-click="delUser(user)"></span></td>
+                <td align="center"><span ng-bind="user.id"></span></td>
+                <td align="center"><span ng-bind="user.name"></span></td>
+                <td align="center"><span ng-bind="user.dob"></span></td>
+                <td align="center"><span ng-bind="user.gender"></span></td>
+                <td align="center"><span ng-bind="user.addrLine1"></span></td>
+                <td align="center"><span ng-bind="user.addrLine2"></span></td>
+                <td align="center"><span ng-bind="user.city"></span></td>
+                <td align="center"><span ng-bind="user.country"></span></td>
+                <td align="center"><span ng-bind="user.mobileNo"></span></td>
+                <td align="center"><span ng-bind="user.email"></span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

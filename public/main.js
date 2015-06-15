@@ -54,21 +54,6 @@ require([
     app.controller('appCtrl',function($scope){
         $scope.test=" test";
     });
-    app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouteProvider){
-        $urlRouteProvider.otherwise('/user');
-        $stateProvider
-            .state('user',{
-                url:'/user',
-                views:{
-                    'view1':{
-                        template:'USER'
-                    },
-                    'view2':{
-                        templateUrl:'javascripts/user/user.html'
-                    }
-                }
-            });
-    }]);
     angular.element(document).ready(function () {
         angular.bootstrap(document, ['app']);
     });

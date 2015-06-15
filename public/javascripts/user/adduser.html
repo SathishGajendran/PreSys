@@ -1,0 +1,82 @@
+<div class="panel panel-default ">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-10">
+                <h4>User Details</h4>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-danger pull-right" ng-click="clearForm()">Clear</button>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <form role="form" class="form-horizontal col-md-9">
+            <div class="form-group">
+                <label class="control-label col-md-4">Name</label>
+                <div class="col-md-5">
+                    <input class="form-control" type="text" maxlength="32" pattern="[a-zA-Z0-9]*" ng-model="user.name"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4">DOB</label>
+                <div class="col-md-6">
+                    <input class="form-control" type="date" ng-model="user.dob"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4">Gender</label>
+                <div class="col-md-8">
+                    <div class="radio col-md-1">
+                        <label><input type="radio" name="gender" value="Male" ng-model="user.gender"/>Male</label>
+                    </div>
+                    <div class="radio col-md-1">
+                        <label><input type="radio" name="gender" value="Female" ng-model="user.gender"/>Female</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4">Address Line1</label>
+                <div class="col-md-8">
+                    <input class="form-control" type="text" maxlength="64" pattern="[a-zA-Z0-9]*" ng-model="user.addrLine1"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4">Address Line2</label>
+                <div class="col-md-8">
+                    <input class="form-control" type="text" maxlength="64" pattern="[a-zA-Z0-9]*" ng-model="user.addrLine2"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4">City / Country</label>
+                <div class="col-md-8">
+                    <div class="col-md-5" style="padding-left:0px">
+                        <input class="form-control" type="text" maxlength="32" pattern="[a-zA-Z0-9]*" ng-model="user.city"/>
+                    </div>
+                    <div class="col-md-5" style="padding-left:0px">
+                        <input class="form-control" type="text"  maxlength="32" pattern="[a-zA-Z0-9]*" ng-model="user.country"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4">Mobile</label>
+                <div class="col-md-5">
+                    <input class="form-control" type="text"  ng-model="user.mobileNo"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4">Email</label>
+                <div class="col-md-6">
+                    <input class="form-control" type="text" maxlength="64" ng-model="user.email"/>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-md-6 pull-right">
+                <button class="btn btn-success pull-right" ng-click="save()">Save</button>
+                <button class="btn btn-danger pull-right" ng-click="cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
