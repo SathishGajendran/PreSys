@@ -14,30 +14,31 @@ define([
                 });
         };
         self.saveUser=function(data){
-            var id=data.id?id:0;
+            var id=data.id?data.id:0;
             $http({
                 url:'/user/'+id,
                 method:'PUT',
                 data:data
             }).then(function(data){
                     if(data){
-                        alert('Saved Successfully');
                         self.goHome();
+                        alert('Saved Successfully');
                     }else{
-                        alert('Error');
+                        alert('Error during saving!!!');
                     }
                 });
         };
-        self.removeUser=function(id){
+        self.removeUser=function(id,callback){
             $http({
                 url:'/user/'+id,
                 method:'DELETE'
             }).then(function(data){
                     if(data){
-                        alert('Deleted Successfully');
                         self.goHome();
+                        callback();
+                        alert('Deleted Successfully');
                     }else{
-                        alert('Error');
+                        alert('Error during deleting!!!');
                     }
                 });
         };
@@ -66,8 +67,9 @@ define([
 
         $scope.delUser=function(data){
             if(confirm("Do you want to Delete ?")){
-                crudUser.removeUser(data.id);
-                crudUser.getAllUser($scope);
+                crudUser.removeUser(data.id,function(){
+                    crudUser.getAllUser($scope);
+                });
             }
         };
 
@@ -93,16 +95,18 @@ define([
             crudUser.saveUser($scope.user);
         };
         var id=$stateParams.id;
-        if(id!=0){
-            $http({
-                url:'/user/'+id,
-                method:'GET'
-            }).then(function(res){
-                    $scope.user=res.data[0];
-                });
-        }else{
-            alert('Invalid');
-            crudUser.goHome();
+        if(id){
+            if(id!=0){
+                $http({
+                    url:'/user/'+id,
+                    method:'GET'
+                }).then(function(res){
+                        $scope.user=res.data[0];
+                    });
+            }else{
+                alert('Invalid');
+                crudUser.goHome();
+            }
         }
     });
 

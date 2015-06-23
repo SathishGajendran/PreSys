@@ -19,6 +19,7 @@
     "angular-ui-router": "~0.2.15",
     "angular-bootstrap": "~0.13.0",
     "bootstrap": "~3.3.4",
-    "less": "~2.5.1"
+    "less": "~2.5.1",
+    "angular-loading-bar": "~0.8.0"
   }
 }

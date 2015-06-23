@@ -1,7 +1,7 @@
 
 var mongoose=require('mongoose');
 
-var user=mongoose.Schema({
+var user=new mongoose.Schema({
     id:Number,
     name:String,
     dob:Date,

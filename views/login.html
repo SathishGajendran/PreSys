@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>PreSys</title>
+</head>
+<body style="background-image:url('images/presys.jpg');background-repeat:no-repeat;background-size: 100% 100%;">
+<form action="/login" method="post">
+    <div style="display: inline-block;position: absolute;top:20px;right: 20px;background-color: white;padding: 2px;border-radius: 2px;">
+        <label for="username" >Name</label>
+        <input type="text" name="username" id="username"/>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password"/>
+        <button type="submit" style="background-color: rgb(74, 255, 74);border-radius: 4px;border: 0px;">Submit</button>
+        <div style="color: red"><%=message%></div>
+    </div>
+</form>
+</body>
+</html>

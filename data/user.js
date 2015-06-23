@@ -1,5 +1,4 @@
 
-var mongoose=require('mongoose');
 var DB=require('./dbconn');
 var schema=require('./mongodb/schema/user');
 
